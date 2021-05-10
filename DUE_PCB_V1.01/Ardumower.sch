@@ -18,8 +18,8 @@ L Connector:Screw_Terminal_01x04 J2
 U 1 1 606BF01B
 P 50 5500
 F 0 "J2" H 130 5492 50  0000 L CNN
-F 1 "I2C_2" H 130 5401 50  0000 L CNN
-F 2 "Connector_PinHeader_2.54mm:PinHeader_1x04_P2.54mm_Vertical" H 50  5500 50  0001 C CNN
+F 1 "I2C0_2" H 130 5401 50  0000 L CNN
+F 2 "Connector_JST:JST_XH_B4B-XH-A_1x04_P2.50mm_Vertical" H 50  5500 50  0001 C CNN
 F 3 "~" H 50  5500 50  0001 C CNN
 	1    50   5500
 	1    0    0    -1  
@@ -29,8 +29,8 @@ L Connector:Screw_Terminal_01x04 J3
 U 1 1 606BFED6
 P 50 6250
 F 0 "J3" H 130 6242 50  0000 L CNN
-F 1 "I2C_3" H 130 6151 50  0000 L CNN
-F 2 "Connector_PinHeader_2.54mm:PinHeader_1x04_P2.54mm_Vertical" H 50  6250 50  0001 C CNN
+F 1 "I2C1_1" H 130 6151 50  0000 L CNN
+F 2 "Connector_JST:JST_XH_B4B-XH-A_1x04_P2.50mm_Vertical" H 50  6250 50  0001 C CNN
 F 3 "~" H 50  6250 50  0001 C CNN
 	1    50   6250
 	1    0    0    -1  
@@ -60,7 +60,7 @@ F 3 "~" H 800 650 50  0001 C CNN
 	1    800  650 
 	0    -1   -1   0   
 $EndComp
-Text GLabel 7450 4200 2    50   Input ~ 0
+Text GLabel 7450 4200 2    50   Output ~ 0
 pinMotorEnable
 Text GLabel 4850 3200 0    50   Input ~ 0
 pinMotorRightSense
@@ -87,7 +87,7 @@ pinOdometryRight
 Text GLabel 4850 2800 0    50   Input ~ 0
 pinOdometryRight2
 Text GLabel 4850 3500 0    50   Input ~ 0
-pinMotorMowSense
+pinMotorMow2Sense
 Text GLabel 7450 3100 2    50   Input ~ 0
 pinMotorMowFault
 Text GLabel 7450 4400 2    50   Input ~ 0
@@ -117,8 +117,6 @@ Text GLabel 4850 3600 0    50   Input ~ 0
 pinPerimeterRight
 Text GLabel 4850 3700 0    50   Input ~ 0
 pinPerimeterLeft
-Text GLabel 4850 3800 0    50   Input ~ 0
-pinPerimeterCenter
 Text GLabel 7450 1900 2    50   Output ~ 0
 pinMotorLeft2PWM
 Text GLabel 7450 2000 2    50   Output ~ 0
@@ -155,17 +153,15 @@ Text GLabel 7450 4500 2    50   Output ~ 0
 pinMotorLeft2Dir
 Text GLabel 7450 4600 2    50   Output ~ 0
 pinMotorRight2Dir
-Text GLabel 7450 4700 2    50   Input ~ 0
-pinLawnBackRecv
-Text GLabel 7450 4800 2    50   Output ~ 0
-pinLawnBackSend
+Text GLabel 7450 4700 2    50   Output ~ 0
+freePinD42
 Text GLabel 7450 5100 2    50   Output ~ 0
 pinUserSwitch1
 Text GLabel 7450 5200 2    50   Output ~ 0
 pinUserSwitch2
 Text GLabel 7450 5300 2    50   Output ~ 0
 pinUserSwitch3
-Text GLabel 7450 4900 2    50   Output ~ 0
+Text GLabel 7450 4900 2    50   Input ~ 0
 pinRain
 Text GLabel 4850 1600 0    50   Output ~ 0
 TX0
@@ -180,9 +176,9 @@ RX2
 Text GLabel 4850 2000 0    50   Output ~ 0
 TX2
 Text GLabel 4850 2100 0    50   Input ~ 0
-GPS_TX
+RX3
 Text GLabel 4850 2200 0    50   Output ~ 0
-GPS_RX
+TX3
 Text GLabel 4850 2300 0    50   Input ~ 0
 SDA0
 Text GLabel 4850 2400 0    50   Input ~ 0
@@ -245,9 +241,7 @@ Text GLabel 1800 2700 0    50   Input ~ 0
 pinSonarRightEcho
 Text GLabel 1750 3950 0    50   Input ~ 0
 pinSonarLeftEcho
-Text GLabel 2050 5000 0    50   Input ~ 0
-pinBumperRight
-Text GLabel 2050 4500 0    50   Input ~ 0
+Text GLabel 1355 5185 0    50   Input ~ 0
 pinBumperLeft
 $Comp
 L Connector:Screw_Terminal_01x03 J13
@@ -270,7 +264,7 @@ U 1 1 60780996
 P 1550 5900
 F 0 "J6" H 1630 5942 50  0000 L CNN
 F 1 "Drop_Left" H 1630 5851 50  0000 L CNN
-F 2 "Connector_PinHeader_2.54mm:PinHeader_1x03_P2.54mm_Vertical" H 1550 5900 50  0001 C CNN
+F 2 "Connector_JST:JST_XH_B3B-XH-A_1x03_P2.50mm_Vertical" H 1550 5900 50  0001 C CNN
 F 3 "~" H 1550 5900 50  0001 C CNN
 	1    1550 5900
 	1    0    0    -1  
@@ -278,21 +272,21 @@ $EndComp
 $Comp
 L Connector:Screw_Terminal_01x03 J7
 U 1 1 6078194B
-P 1550 6450
-F 0 "J7" H 1630 6492 50  0000 L CNN
-F 1 "Drop_Right" H 1630 6401 50  0000 L CNN
-F 2 "Connector_PinHeader_2.54mm:PinHeader_1x03_P2.54mm_Vertical" H 1550 6450 50  0001 C CNN
-F 3 "~" H 1550 6450 50  0001 C CNN
-	1    1550 6450
+P 1550 6285
+F 0 "J7" H 1630 6327 50  0000 L CNN
+F 1 "Drop_Right" H 1630 6236 50  0000 L CNN
+F 2 "Connector_JST:JST_XH_B3B-XH-A_1x03_P2.50mm_Vertical" H 1550 6285 50  0001 C CNN
+F 3 "~" H 1550 6285 50  0001 C CNN
+	1    1550 6285
 	1    0    0    -1  
 $EndComp
 Wire Wire Line
 	1050 5800 1350 5800
 Wire Wire Line
-	1050 6350 1350 6350
-Text GLabel 1350 6550 0    50   Output ~ 0
+	1050 6185 1350 6185
+Text GLabel 1350 6385 0    50   Input ~ 0
 pinDropRight
-Text GLabel 1350 6000 0    50   Output ~ 0
+Text GLabel 1350 6000 0    50   Input ~ 0
 pinDropLeft
 $Comp
 L Connector:Screw_Terminal_01x03 J8
@@ -300,14 +294,14 @@ U 1 1 6078D35B
 P 1550 7050
 F 0 "J8" H 1630 7092 50  0000 L CNN
 F 1 "Tilt" H 1630 7001 50  0000 L CNN
-F 2 "Connector_PinHeader_2.54mm:PinHeader_1x03_P2.54mm_Vertical" H 1550 7050 50  0001 C CNN
+F 2 "Connector_JST:JST_XH_B3B-XH-A_1x03_P2.50mm_Vertical" H 1550 7050 50  0001 C CNN
 F 3 "~" H 1550 7050 50  0001 C CNN
 	1    1550 7050
 	1    0    0    -1  
 $EndComp
 Wire Wire Line
 	1050 6950 1350 6950
-Text GLabel 1350 7150 0    50   Output ~ 0
+Text GLabel 1350 7150 0    50   Input ~ 0
 pinTilt
 $Comp
 L Connector:Screw_Terminal_01x03 J9
@@ -315,7 +309,7 @@ U 1 1 607A8DE0
 P 1550 7550
 F 0 "J9" H 1630 7592 50  0000 L CNN
 F 1 "Rain" H 1630 7501 50  0000 L CNN
-F 2 "Connector_PinHeader_2.54mm:PinHeader_1x03_P2.54mm_Vertical" H 1550 7550 50  0001 C CNN
+F 2 "Connector_JST:JST_XH_B3B-XH-A_1x03_P2.50mm_Vertical" H 1550 7550 50  0001 C CNN
 F 3 "~" H 1550 7550 50  0001 C CNN
 	1    1550 7550
 	1    0    0    -1  
@@ -324,131 +318,120 @@ Wire Wire Line
 	1050 7450 1350 7450
 Text GLabel 1350 7650 0    50   Input ~ 0
 pinRain
-$Comp
-L Lötpad_2,5mm:SPEAKER SP1
-U 1 1 607B6900
-P 10300 4700
-F 0 "SP1" H 10578 4761 70  0000 L CNN
-F 1 "SPEAKER" H 10578 4640 70  0000 L CNN
-F 2 "Zimprich:Buzzer_12x9.5RM7.6" H 10300 4700 60  0001 C CNN
-F 3 "" H 10300 4700 60  0000 C CNN
-	1    10300 4700
-	1    0    0    -1  
-$EndComp
-Text GLabel 9600 4800 0    50   Input ~ 0
+Text GLabel 1350 5575 0    50   Input ~ 0
 pinBuzzer
 $Comp
 L Connector:Screw_Terminal_01x02 J20
 U 1 1 607D1A82
-P 3300 6150
-F 0 "J20" H 3380 6142 50  0000 L CNN
-F 1 "Button" H 3380 6051 50  0000 L CNN
-F 2 "Zimprich:Pin_Header_KK110_1x02_3D" H 3300 6150 50  0001 C CNN
-F 3 "~" H 3300 6150 50  0001 C CNN
-	1    3300 6150
+P 1550 4635
+F 0 "J20" H 1630 4627 50  0000 L CNN
+F 1 "Button" H 1630 4536 50  0000 L CNN
+F 2 "Zimprich:Pin_Header_KK110_1x02_3D" H 1550 4635 50  0001 C CNN
+F 3 "~" H 1550 4635 50  0001 C CNN
+	1    1550 4635
 	1    0    0    -1  
 $EndComp
-Text GLabel 2650 6250 0    50   Input ~ 0
+Text GLabel 1110 4735 0    50   Input ~ 0
 pinButton
 $Comp
 L Device:R R17
 U 1 1 607EF5D8
-P 10100 2800
-F 0 "R17" V 10000 2800 50  0000 C CNN
-F 1 "100" V 10100 2800 50  0000 C CNN
-F 2 "Resistor_THT:R_Axial_DIN0207_L6.3mm_D2.5mm_P2.54mm_Vertical" V 10030 2800 50  0001 C CNN
-F 3 "~" H 10100 2800 50  0001 C CNN
-	1    10100 2800
+P 9945 1730
+F 0 "R17" V 9845 1730 50  0000 C CNN
+F 1 "100" V 9945 1730 50  0000 C CNN
+F 2 "Resistor_THT:R_Axial_DIN0207_L6.3mm_D2.5mm_P2.54mm_Vertical" V 9875 1730 50  0001 C CNN
+F 3 "~" H 9945 1730 50  0001 C CNN
+	1    9945 1730
 	0    -1   -1   0   
 $EndComp
 Wire Wire Line
-	10400 2800 10250 2800
+	10245 1730 10095 1730
 Wire Wire Line
-	9950 2800 9800 2800
+	9795 1730 9645 1730
 Wire Wire Line
-	9950 3650 9800 3650
+	9795 2075 9645 2075
 $Comp
-L Zimprich:LED D5
+L Ardumower-rescue:LED-Zimprich D5
 U 1 1 60874952
-P 9600 4250
-F 0 "D5" H 9600 4465 50  0000 C CNN
-F 1 "LED" H 9600 4374 50  0000 C CNN
-F 2 "LED_THT:LED_D3.0mm" H 9600 4250 60  0001 C CNN
-F 3 "" H 9600 4250 60  0000 C CNN
-	1    9600 4250
+P 9580 1535
+F 0 "D5" H 9580 1750 50  0000 C CNN
+F 1 "LED" H 9580 1659 50  0000 C CNN
+F 2 "LED_THT:LED_D3.0mm" H 9580 1535 60  0001 C CNN
+F 3 "" H 9580 1535 60  0000 C CNN
+	1    9580 1535
 	1    0    0    -1  
 $EndComp
 $Comp
 L power:GND #PWR047
 U 1 1 60875261
-P 9400 4250
-F 0 "#PWR047" H 9400 4000 50  0001 C CNN
-F 1 "GND" V 9405 4122 50  0000 R CNN
-F 2 "" H 9400 4250 50  0001 C CNN
-F 3 "" H 9400 4250 50  0001 C CNN
-	1    9400 4250
+P 9380 1535
+F 0 "#PWR047" H 9380 1285 50  0001 C CNN
+F 1 "GND" V 9385 1407 50  0000 R CNN
+F 2 "" H 9380 1535 50  0001 C CNN
+F 3 "" H 9380 1535 50  0001 C CNN
+	1    9380 1535
 	0    1    1    0   
 $EndComp
-Text GLabel 10250 4250 2    50   Input ~ 0
+Text GLabel 10230 1535 2    50   Input ~ 0
 pinLED
 $Comp
 L Device:R R14
 U 1 1 6087DDB1
-P 9950 4250
-F 0 "R14" V 9850 4250 50  0000 C CNN
-F 1 "100" V 9950 4250 50  0000 C CNN
-F 2 "Resistor_THT:R_Axial_DIN0207_L6.3mm_D2.5mm_P2.54mm_Vertical" V 9880 4250 50  0001 C CNN
-F 3 "~" H 9950 4250 50  0001 C CNN
-	1    9950 4250
+P 9930 1535
+F 0 "R14" V 9830 1535 50  0000 C CNN
+F 1 "100" V 9930 1535 50  0000 C CNN
+F 2 "Resistor_THT:R_Axial_DIN0207_L6.3mm_D2.5mm_P2.54mm_Vertical" V 9860 1535 50  0001 C CNN
+F 3 "~" H 9930 1535 50  0001 C CNN
+	1    9930 1535
 	0    1    1    0   
 $EndComp
 Wire Wire Line
-	10100 4250 10250 4250
+	10080 1535 10230 1535
 $Comp
 L power:GND #PWR046
 U 1 1 608B41F0
-P 9400 3650
-F 0 "#PWR046" H 9400 3400 50  0001 C CNN
-F 1 "GND" V 9405 3522 50  0000 R CNN
-F 2 "" H 9400 3650 50  0001 C CNN
-F 3 "" H 9400 3650 50  0001 C CNN
-	1    9400 3650
+P 9245 2075
+F 0 "#PWR046" H 9245 1825 50  0001 C CNN
+F 1 "GND" V 9250 1947 50  0000 R CNN
+F 2 "" H 9245 2075 50  0001 C CNN
+F 3 "" H 9245 2075 50  0001 C CNN
+	1    9245 2075
 	0    1    1    0   
 $EndComp
 $Comp
-L Zimprich:LED D4
+L Ardumower-rescue:LED-Zimprich D4
 U 1 1 608B4966
-P 9600 3650
-F 0 "D4" H 9600 3405 50  0000 C CNN
-F 1 "LED_5V" H 9600 3496 50  0000 C CNN
-F 2 "LED_THT:LED_D3.0mm" H 9600 3650 60  0001 C CNN
-F 3 "" H 9600 3650 60  0000 C CNN
-	1    9600 3650
+P 9445 2075
+F 0 "D4" H 9445 1830 50  0000 C CNN
+F 1 "LED_5V" H 9445 1921 50  0000 C CNN
+F 2 "LED_THT:LED_D3.0mm" H 9445 2075 60  0001 C CNN
+F 3 "" H 9445 2075 60  0000 C CNN
+	1    9445 2075
 	1    0    0    -1  
 $EndComp
 $Comp
 L power:GND #PWR045
 U 1 1 608BA949
-P 9400 2800
-F 0 "#PWR045" H 9400 2550 50  0001 C CNN
-F 1 "GND" V 9405 2672 50  0000 R CNN
-F 2 "" H 9400 2800 50  0001 C CNN
-F 3 "" H 9400 2800 50  0001 C CNN
-	1    9400 2800
+P 9245 1730
+F 0 "#PWR045" H 9245 1480 50  0001 C CNN
+F 1 "GND" V 9250 1602 50  0000 R CNN
+F 2 "" H 9245 1730 50  0001 C CNN
+F 3 "" H 9245 1730 50  0001 C CNN
+	1    9245 1730
 	0    1    1    0   
 $EndComp
 $Comp
-L Zimprich:LED D3
+L Ardumower-rescue:LED-Zimprich D3
 U 1 1 608BB0E1
-P 9600 2800
-F 0 "D3" H 9600 2555 50  0000 C CNN
-F 1 "LED_3V" H 9600 2646 50  0000 C CNN
-F 2 "LED_THT:LED_D3.0mm" H 9600 2800 60  0001 C CNN
-F 3 "" H 9600 2800 60  0000 C CNN
-	1    9600 2800
+P 9445 1730
+F 0 "D3" H 9445 1485 50  0000 C CNN
+F 1 "LED_3V" H 9445 1576 50  0000 C CNN
+F 2 "LED_THT:LED_D3.0mm" H 9445 1730 60  0001 C CNN
+F 3 "" H 9445 1730 60  0000 C CNN
+	1    9445 1730
 	1    0    0    -1  
 $EndComp
-Text GLabel 1950 850  2    50   Output ~ 0
+Text GLabel 900  850  3    50   Output ~ 0
 +9V
 $Comp
 L power:GND #PWR037
@@ -464,12 +447,12 @@ $EndComp
 $Comp
 L power:GND #PWR030
 U 1 1 60978B23
-P 2700 5950
-F 0 "#PWR030" H 2700 5700 50  0001 C CNN
-F 1 "GND" V 2705 5822 50  0000 R CNN
-F 2 "" H 2700 5950 50  0001 C CNN
-F 3 "" H 2700 5950 50  0001 C CNN
-	1    2700 5950
+P 1350 4635
+F 0 "#PWR030" H 1350 4385 50  0001 C CNN
+F 1 "GND" V 1355 4507 50  0000 R CNN
+F 2 "" H 1350 4635 50  0001 C CNN
+F 3 "" H 1350 4635 50  0001 C CNN
+	1    1350 4635
 	0    1    1    0   
 $EndComp
 $Comp
@@ -497,12 +480,12 @@ $EndComp
 $Comp
 L power:GND #PWR015
 U 1 1 6097E7D6
-P 1350 6450
-F 0 "#PWR015" H 1350 6200 50  0001 C CNN
-F 1 "GND" V 1355 6322 50  0000 R CNN
-F 2 "" H 1350 6450 50  0001 C CNN
-F 3 "" H 1350 6450 50  0001 C CNN
-	1    1350 6450
+P 1350 6285
+F 0 "#PWR015" H 1350 6035 50  0001 C CNN
+F 1 "GND" V 1355 6157 50  0000 R CNN
+F 2 "" H 1350 6285 50  0001 C CNN
+F 3 "" H 1350 6285 50  0001 C CNN
+	1    1350 6285
 	0    1    1    0   
 $EndComp
 $Comp
@@ -836,55 +819,20 @@ pinRemoteMow
 Text GLabel 4700 6750 0    50   Input ~ 0
 pinRemoteSwitch
 $Comp
-L Connector:Screw_Terminal_01x06 J4
-U 1 1 608CA2B5
-P 50 6950
-F 0 "J4" H 130 6942 50  0000 L CNN
-F 1 "DS3231 RTC" H 130 6851 50  0000 L CNN
-F 2 "Connector_PinHeader_2.54mm:PinHeader_1x06_P2.54mm_Vertical" H 50  6950 50  0001 C CNN
-F 3 "~" H 50  6950 50  0001 C CNN
-	1    50   6950
-	1    0    0    -1  
-$EndComp
-$Comp
 L power:GND #PWR08
 U 1 1 608CBE4F
-P -150 7250
-F 0 "#PWR08" H -150 7000 50  0001 C CNN
-F 1 "GND" V -145 7122 50  0000 R CNN
-F 2 "" H -150 7250 50  0001 C CNN
-F 3 "" H -150 7250 50  0001 C CNN
-	1    -150 7250
+P -145 6915
+F 0 "#PWR08" H -145 6665 50  0001 C CNN
+F 1 "GND" V -140 6787 50  0000 R CNN
+F 2 "" H -145 6915 50  0001 C CNN
+F 3 "" H -145 6915 50  0001 C CNN
+	1    -145 6915
 	0    1    1    0   
 $EndComp
-Text GLabel -150 7050 0    50   Input ~ 0
+Text GLabel -145 7015 0    50   Input ~ 0
 SDA1
-Text GLabel -150 6950 0    50   Input ~ 0
+Text GLabel -145 7115 0    50   Input ~ 0
 SCL1
-NoConn ~ -150 6850
-NoConn ~ -150 6750
-$Comp
-L power:GND #PWR051
-U 1 1 60932E8B
-P 10000 4600
-F 0 "#PWR051" H 10000 4350 50  0001 C CNN
-F 1 "GND" V 10005 4472 50  0000 R CNN
-F 2 "" H 10000 4600 50  0001 C CNN
-F 3 "" H 10000 4600 50  0001 C CNN
-	1    10000 4600
-	0    1    1    0   
-$EndComp
-$Comp
-L Jumper:Jumper_2_Open JP3
-U 1 1 6093522B
-P 9800 4800
-F 0 "JP3" H 9800 4900 50  0000 C CNN
-F 1 "Buzzer OFF" H 9800 4700 50  0000 C CNN
-F 2 "Connector_PinHeader_2.54mm:PinHeader_1x02_P2.54mm_Vertical" H 9800 4800 50  0001 C CNN
-F 3 "~" H 9800 4800 50  0001 C CNN
-	1    9800 4800
-	1    0    0    -1  
-$EndComp
 $Comp
 L Connector:Screw_Terminal_01x02 J17
 U 1 1 608FC19B
@@ -963,8 +911,6 @@ U 609243F4
 F0 "Connector_Motor" 50
 F1 "file609243F3.sch" 50
 $EndSheet
-Wire Wire Line
-	3550 5800 4850 5800
 $Comp
 L Connector:Screw_Terminal_01x03 J12
 U 1 1 60776476
@@ -1005,9 +951,7 @@ Wire Wire Line
 Wire Wire Line
 	2550 3600 2550 3750
 Wire Wire Line
-	-500 7150 -150 7150
-Wire Wire Line
-	10400 3650 10250 3650
+	10245 2075 10095 2075
 $Comp
 L Mechanical:MountingHole_Pad H2
 U 1 1 6091DE79
@@ -1097,162 +1041,37 @@ F 3 "" H 11950 2650 50  0001 C CNN
 	1    0    0    -1  
 $EndComp
 $Comp
-L Connector:Screw_Terminal_01x02 J10
-U 1 1 609D47E3
-P 2450 4400
-F 0 "J10" H 2530 4392 50  0000 L CNN
-F 1 "Bumper Left" H 2530 4301 50  0000 L CNN
-F 2 "Connector_PinHeader_2.54mm:PinHeader_1x02_P2.54mm_Vertical" H 2450 4400 50  0001 C CNN
-F 3 "~" H 2450 4400 50  0001 C CNN
-	1    2450 4400
-	1    0    0    -1  
-$EndComp
-$Comp
 L power:GND #PWR023
 U 1 1 609D52AA
-P 2250 4400
-F 0 "#PWR023" H 2250 4150 50  0001 C CNN
-F 1 "GND" V 2255 4272 50  0000 R CNN
-F 2 "" H 2250 4400 50  0001 C CNN
-F 3 "" H 2250 4400 50  0001 C CNN
-	1    2250 4400
-	0    1    1    0   
-$EndComp
-$Comp
-L Connector:Screw_Terminal_01x02 J11
-U 1 1 609DA7EE
-P 2450 4900
-F 0 "J11" H 2530 4892 50  0000 L CNN
-F 1 "Bumper Right" H 2530 4801 50  0000 L CNN
-F 2 "Zimprich:Pin_Header_KK110_1x02_3D" H 2450 4900 50  0001 C CNN
-F 3 "~" H 2450 4900 50  0001 C CNN
-	1    2450 4900
-	1    0    0    -1  
-$EndComp
-$Comp
-L power:GND #PWR024
-U 1 1 609DA7F8
-P 2250 4900
-F 0 "#PWR024" H 2250 4650 50  0001 C CNN
-F 1 "GND" V 2255 4772 50  0000 R CNN
-F 2 "" H 2250 4900 50  0001 C CNN
-F 3 "" H 2250 4900 50  0001 C CNN
-	1    2250 4900
+P 1355 4985
+F 0 "#PWR023" H 1355 4735 50  0001 C CNN
+F 1 "GND" V 1360 4857 50  0000 R CNN
+F 2 "" H 1355 4985 50  0001 C CNN
+F 3 "" H 1355 4985 50  0001 C CNN
+	1    1355 4985
 	0    1    1    0   
 $EndComp
 Text GLabel 7450 2100 2    50   Input ~ 0
 ReservePinD8
 Text GLabel 7450 2200 2    50   Input ~ 0
 ReservePinD9
-Text GLabel 9850 1350 2    50   Input ~ 0
-ReservePinD8
-Text GLabel 9850 1450 2    50   Input ~ 0
-ReservePinD9
 Text GLabel 7450 5400 2    50   Input ~ 0
 ReservePinD49
-Text GLabel 9850 1550 2    50   Input ~ 0
-ReservePinD49
-Text GLabel 4850 4200 0    50   Input ~ 0
-pinMotorLeftSense2
-Text GLabel 9550 1300 0    50   Input ~ 0
-ReservePinA10
-Wire Wire Line
-	900  850  3550 850 
-Wire Wire Line
-	10350 2400 10200 2400
-Wire Wire Line
-	9900 2400 9750 2400
-$Comp
-L power:GND #PWR043
-U 1 1 609A8070
-P 9350 2400
-F 0 "#PWR043" H 9350 2150 50  0001 C CNN
-F 1 "GND" V 9355 2272 50  0000 R CNN
-F 2 "" H 9350 2400 50  0001 C CNN
-F 3 "" H 9350 2400 50  0001 C CNN
-	1    9350 2400
-	0    1    1    0   
-$EndComp
-$Comp
-L Zimprich:LED D1
-U 1 1 609A807A
-P 9550 2400
-F 0 "D1" H 9550 2155 50  0000 C CNN
-F 1 "LED_DUE_3V" H 9550 2246 50  0000 C CNN
-F 2 "LED_THT:LED_D3.0mm" H 9550 2400 60  0001 C CNN
-F 3 "" H 9550 2400 60  0000 C CNN
-	1    9550 2400
-	1    0    0    -1  
-$EndComp
-Text GLabel 4850 5400 0    50   Input ~ 0
+Text GLabel 4850 5400 0    50   Output ~ 0
 DUE_3.3V
-Text GLabel 4850 5500 0    50   Input ~ 0
+Text GLabel 4850 5500 0    50   Output ~ 0
 DUE_5V
-Text GLabel 10350 2400 2    50   Input ~ 0
-DUE_3.3V
-$Comp
-L Device:R R15
-U 1 1 609A7690
-P 10050 2400
-F 0 "R15" V 9950 2400 50  0000 C CNN
-F 1 "100" V 10050 2400 50  0000 C CNN
-F 2 "Resistor_THT:R_Axial_DIN0207_L6.3mm_D2.5mm_P2.54mm_Vertical" V 9980 2400 50  0001 C CNN
-F 3 "~" H 10050 2400 50  0001 C CNN
-	1    10050 2400
-	0    -1   -1   0   
-$EndComp
 $Comp
 L Device:R R18
 U 1 1 607FB641
-P 10100 3650
-F 0 "R18" V 10000 3650 50  0000 C CNN
-F 1 "220" V 10100 3650 50  0000 C CNN
-F 2 "Resistor_THT:R_Axial_DIN0207_L6.3mm_D2.5mm_P2.54mm_Vertical" V 10030 3650 50  0001 C CNN
-F 3 "~" H 10100 3650 50  0001 C CNN
-	1    10100 3650
+P 9945 2075
+F 0 "R18" V 9845 2075 50  0000 C CNN
+F 1 "220" V 9945 2075 50  0000 C CNN
+F 2 "Resistor_THT:R_Axial_DIN0207_L6.3mm_D2.5mm_P2.54mm_Vertical" V 9875 2075 50  0001 C CNN
+F 3 "~" H 9945 2075 50  0001 C CNN
+	1    9945 2075
 	0    -1   -1   0   
 $EndComp
-Wire Wire Line
-	9900 3250 9750 3250
-$Comp
-L power:GND #PWR044
-U 1 1 609B9D51
-P 9350 3250
-F 0 "#PWR044" H 9350 3000 50  0001 C CNN
-F 1 "GND" V 9355 3122 50  0000 R CNN
-F 2 "" H 9350 3250 50  0001 C CNN
-F 3 "" H 9350 3250 50  0001 C CNN
-	1    9350 3250
-	0    1    1    0   
-$EndComp
-$Comp
-L Zimprich:LED D2
-U 1 1 609B9D5B
-P 9550 3250
-F 0 "D2" H 9550 3005 50  0000 C CNN
-F 1 "LED_DUE_5V" H 9550 3096 50  0000 C CNN
-F 2 "LED_THT:LED_D3.0mm" H 9550 3250 60  0001 C CNN
-F 3 "" H 9550 3250 60  0000 C CNN
-	1    9550 3250
-	1    0    0    -1  
-$EndComp
-Wire Wire Line
-	10350 3250 10200 3250
-$Comp
-L Device:R R16
-U 1 1 609B9D70
-P 10050 3250
-F 0 "R16" V 9950 3250 50  0000 C CNN
-F 1 "220" V 10050 3250 50  0000 C CNN
-F 2 "Resistor_THT:R_Axial_DIN0207_L6.3mm_D2.5mm_P2.54mm_Vertical" V 9980 3250 50  0001 C CNN
-F 3 "~" H 10050 3250 50  0001 C CNN
-	1    10050 3250
-	0    -1   -1   0   
-$EndComp
-Text GLabel 10350 3250 2    50   Input ~ 0
-DUE_5V
-Wire Wire Line
-	3550 850  3550 5800
 Wire Wire Line
 	4850 5200 4850 5100
 Connection ~ 4850 5100
@@ -1262,7 +1081,7 @@ Wire Wire Line
 	4850 5000 4850 4900
 Connection ~ 4850 5000
 $Comp
-L arduino:Arduino_Due_Shield XA1
+L Ardumower-rescue:Arduino_Due_Shield-arduino XA1
 U 1 1 606B55C4
 P 6150 3650
 F 0 "XA1" H 6150 1269 60  0000 C CNN
@@ -1352,12 +1171,12 @@ $EndComp
 $Comp
 L power:+3.3V #PWR01
 U 1 1 60A58A3D
-P -500 7150
-F 0 "#PWR01" H -500 7000 50  0001 C CNN
-F 1 "+3.3V" V -485 7278 50  0000 L CNN
-F 2 "" H -500 7150 50  0001 C CNN
-F 3 "" H -500 7150 50  0001 C CNN
-	1    -500 7150
+P -145 6815
+F 0 "#PWR01" H -145 6665 50  0001 C CNN
+F 1 "+3.3V" V -130 6943 50  0000 L CNN
+F 2 "" H -145 6815 50  0001 C CNN
+F 3 "" H -145 6815 50  0001 C CNN
+	1    -145 6815
 	0    -1   -1   0   
 $EndComp
 $Comp
@@ -1376,8 +1195,8 @@ L Connector:Screw_Terminal_01x04 J1
 U 1 1 606BAE4D
 P 50 4750
 F 0 "J1" H 130 4742 50  0000 L CNN
-F 1 "I2C_1" H 130 4651 50  0000 L CNN
-F 2 "Connector_PinHeader_2.54mm:PinHeader_1x04_P2.54mm_Vertical" H 50  4750 50  0001 C CNN
+F 1 "I2C0_1" H 130 4651 50  0000 L CNN
+F 2 "Connector_JST:JST_XH_B4B-XH-A_1x04_P2.50mm_Vertical" H 50  4750 50  0001 C CNN
 F 3 "~" H 50  4750 50  0001 C CNN
 	1    50   4750
 	1    0    0    -1  
@@ -1385,12 +1204,12 @@ $EndComp
 $Comp
 L power:+3.3V #PWR011
 U 1 1 60A67C10
-P 1050 6350
-F 0 "#PWR011" H 1050 6200 50  0001 C CNN
-F 1 "+3.3V" V 1065 6478 50  0000 L CNN
-F 2 "" H 1050 6350 50  0001 C CNN
-F 3 "" H 1050 6350 50  0001 C CNN
-	1    1050 6350
+P 1050 6185
+F 0 "#PWR011" H 1050 6035 50  0001 C CNN
+F 1 "+3.3V" V 1065 6313 50  0000 L CNN
+F 2 "" H 1050 6185 50  0001 C CNN
+F 3 "" H 1050 6185 50  0001 C CNN
+	1    1050 6185
 	0    -1   -1   0   
 $EndComp
 $Comp
@@ -1415,54 +1234,52 @@ F 3 "" H 1050 7450 50  0001 C CNN
 	1    1050 7450
 	0    -1   -1   0   
 $EndComp
-Wire Wire Line
-	3100 5950 3100 6150
 $Comp
 L Connector:Screw_Terminal_01x05 J25
 U 1 1 60A85A05
-P 9050 6200
-F 0 "J25" H 9130 6242 50  0000 L CNN
-F 1 "TX0/RX0" H 9130 6151 50  0000 L CNN
-F 2 "Connector_PinHeader_2.54mm:PinHeader_1x05_P2.54mm_Vertical" H 9050 6200 50  0001 C CNN
-F 3 "~" H 9050 6200 50  0001 C CNN
-	1    9050 6200
+P 9950 5585
+F 0 "J25" H 10030 5627 50  0000 L CNN
+F 1 "Ser0" H 10030 5536 50  0000 L CNN
+F 2 "Connector_PinHeader_2.54mm:PinHeader_1x05_P2.54mm_Vertical" H 9950 5585 50  0001 C CNN
+F 3 "~" H 9950 5585 50  0001 C CNN
+	1    9950 5585
 	1    0    0    -1  
 $EndComp
 $Comp
 L power:+3.3V #PWR040
 U 1 1 60A865E8
-P 8850 6000
-F 0 "#PWR040" H 8850 5850 50  0001 C CNN
-F 1 "+3.3V" V 8865 6128 50  0000 L CNN
-F 2 "" H 8850 6000 50  0001 C CNN
-F 3 "" H 8850 6000 50  0001 C CNN
-	1    8850 6000
+P 9750 5385
+F 0 "#PWR040" H 9750 5235 50  0001 C CNN
+F 1 "+3.3V" V 9765 5513 50  0000 L CNN
+F 2 "" H 9750 5385 50  0001 C CNN
+F 3 "" H 9750 5385 50  0001 C CNN
+	1    9750 5385
 	0    -1   -1   0   
 $EndComp
 $Comp
 L power:+5V #PWR042
 U 1 1 60A878E6
-P 8850 6400
-F 0 "#PWR042" H 8850 6250 50  0001 C CNN
-F 1 "+5V" V 8865 6528 50  0000 L CNN
-F 2 "" H 8850 6400 50  0001 C CNN
-F 3 "" H 8850 6400 50  0001 C CNN
-	1    8850 6400
+P 9750 5785
+F 0 "#PWR042" H 9750 5635 50  0001 C CNN
+F 1 "+5V" V 9765 5913 50  0000 L CNN
+F 2 "" H 9750 5785 50  0001 C CNN
+F 3 "" H 9750 5785 50  0001 C CNN
+	1    9750 5785
 	0    -1   -1   0   
 $EndComp
-Text GLabel 8850 6200 0    50   Input ~ 0
+Text GLabel 9750 5585 0    50   Input ~ 0
 RX0
-Text GLabel 8850 6300 0    50   Output ~ 0
+Text GLabel 9750 5685 0    50   Output ~ 0
 TX0
 $Comp
 L power:GND #PWR041
 U 1 1 60A8C551
-P 8850 6100
-F 0 "#PWR041" H 8850 5850 50  0001 C CNN
-F 1 "GND" V 8855 5972 50  0000 R CNN
-F 2 "" H 8850 6100 50  0001 C CNN
-F 3 "" H 8850 6100 50  0001 C CNN
-	1    8850 6100
+P 9750 5485
+F 0 "#PWR041" H 9750 5235 50  0001 C CNN
+F 1 "GND" V 9755 5357 50  0000 R CNN
+F 2 "" H 9750 5485 50  0001 C CNN
+F 3 "" H 9750 5485 50  0001 C CNN
+	1    9750 5485
 	0    1    1    0   
 $EndComp
 $Comp
@@ -1470,7 +1287,7 @@ L Connector:Screw_Terminal_01x05 J26
 U 1 1 60A9D4D5
 P 9950 6200
 F 0 "J26" H 10030 6242 50  0000 L CNN
-F 1 "TX1/RX1" H 10030 6151 50  0000 L CNN
+F 1 "Ser1" H 10030 6151 50  0000 L CNN
 F 2 "Connector_PinHeader_2.54mm:PinHeader_1x05_P2.54mm_Vertical" H 9950 6200 50  0001 C CNN
 F 3 "~" H 9950 6200 50  0001 C CNN
 	1    9950 6200
@@ -1518,7 +1335,7 @@ L Connector:Screw_Terminal_01x05 J27
 U 1 1 60AA8056
 P 10900 6200
 F 0 "J27" H 10980 6242 50  0000 L CNN
-F 1 "TX2/RX2" H 10980 6151 50  0000 L CNN
+F 1 "Ser2" H 10980 6151 50  0000 L CNN
 F 2 "Connector_PinHeader_2.54mm:PinHeader_1x05_P2.54mm_Vertical" H 10900 6200 50  0001 C CNN
 F 3 "~" H 10900 6200 50  0001 C CNN
 	1    10900 6200
@@ -1564,49 +1381,49 @@ $EndComp
 $Comp
 L Connector:Screw_Terminal_01x05 J28
 U 1 1 60AB3738
-P 11900 6250
-F 0 "J28" H 11980 6292 50  0000 L CNN
-F 1 "GPS_TX/GPS_RX" H 11980 6201 50  0000 L CNN
-F 2 "Connector_PinHeader_2.54mm:PinHeader_1x05_P2.54mm_Vertical" H 11900 6250 50  0001 C CNN
-F 3 "~" H 11900 6250 50  0001 C CNN
-	1    11900 6250
+P 10895 5590
+F 0 "J28" H 10975 5632 50  0000 L CNN
+F 1 "Ser3" H 10975 5541 50  0000 L CNN
+F 2 "Connector_PinHeader_2.54mm:PinHeader_1x05_P2.54mm_Vertical" H 10895 5590 50  0001 C CNN
+F 3 "~" H 10895 5590 50  0001 C CNN
+	1    10895 5590
 	1    0    0    -1  
 $EndComp
 $Comp
 L power:+3.3V #PWR057
 U 1 1 60AB433C
-P 11700 6050
-F 0 "#PWR057" H 11700 5900 50  0001 C CNN
-F 1 "+3.3V" V 11715 6178 50  0000 L CNN
-F 2 "" H 11700 6050 50  0001 C CNN
-F 3 "" H 11700 6050 50  0001 C CNN
-	1    11700 6050
+P 10695 5390
+F 0 "#PWR057" H 10695 5240 50  0001 C CNN
+F 1 "+3.3V" V 10710 5518 50  0000 L CNN
+F 2 "" H 10695 5390 50  0001 C CNN
+F 3 "" H 10695 5390 50  0001 C CNN
+	1    10695 5390
 	0    -1   -1   0   
 $EndComp
 $Comp
 L power:+5V #PWR059
 U 1 1 60AB4346
-P 11700 6450
-F 0 "#PWR059" H 11700 6300 50  0001 C CNN
-F 1 "+5V" V 11715 6578 50  0000 L CNN
-F 2 "" H 11700 6450 50  0001 C CNN
-F 3 "" H 11700 6450 50  0001 C CNN
-	1    11700 6450
+P 10695 5790
+F 0 "#PWR059" H 10695 5640 50  0001 C CNN
+F 1 "+5V" V 10710 5918 50  0000 L CNN
+F 2 "" H 10695 5790 50  0001 C CNN
+F 3 "" H 10695 5790 50  0001 C CNN
+	1    10695 5790
 	0    -1   -1   0   
 $EndComp
-Text GLabel 11700 6250 0    50   Input ~ 0
-GPS_RX
-Text GLabel 11700 6350 0    50   Output ~ 0
-GPS_TX
+Text GLabel 10695 5590 0    50   Input ~ 0
+RX3
+Text GLabel 10695 5690 0    50   Output ~ 0
+TX3
 $Comp
 L power:GND #PWR058
 U 1 1 60AB4352
-P 11700 6150
-F 0 "#PWR058" H 11700 5900 50  0001 C CNN
-F 1 "GND" V 11705 6022 50  0000 R CNN
-F 2 "" H 11700 6150 50  0001 C CNN
-F 3 "" H 11700 6150 50  0001 C CNN
-	1    11700 6150
+P 10695 5490
+F 0 "#PWR058" H 10695 5240 50  0001 C CNN
+F 1 "GND" V 10700 5362 50  0000 R CNN
+F 2 "" H 10695 5490 50  0001 C CNN
+F 3 "" H 10695 5490 50  0001 C CNN
+	1    10695 5490
 	0    1    1    0   
 $EndComp
 $Comp
@@ -1712,33 +1529,25 @@ $EndComp
 $Comp
 L power:+3.3V #PWR052
 U 1 1 60C0713D
-P 10400 2800
-F 0 "#PWR052" H 10400 2650 50  0001 C CNN
-F 1 "+3.3V" V 10415 2928 50  0000 L CNN
-F 2 "" H 10400 2800 50  0001 C CNN
-F 3 "" H 10400 2800 50  0001 C CNN
-	1    10400 2800
+P 10245 1730
+F 0 "#PWR052" H 10245 1580 50  0001 C CNN
+F 1 "+3.3V" V 10260 1858 50  0000 L CNN
+F 2 "" H 10245 1730 50  0001 C CNN
+F 3 "" H 10245 1730 50  0001 C CNN
+	1    10245 1730
 	0    1    1    0   
 $EndComp
 $Comp
 L power:+5V #PWR053
 U 1 1 60C0D323
-P 10400 3650
-F 0 "#PWR053" H 10400 3500 50  0001 C CNN
-F 1 "+5V" V 10415 3778 50  0000 L CNN
-F 2 "" H 10400 3650 50  0001 C CNN
-F 3 "" H 10400 3650 50  0001 C CNN
-	1    10400 3650
+P 10245 2075
+F 0 "#PWR053" H 10245 1925 50  0001 C CNN
+F 1 "+5V" V 10260 2203 50  0000 L CNN
+F 2 "" H 10245 2075 50  0001 C CNN
+F 3 "" H 10245 2075 50  0001 C CNN
+	1    10245 2075
 	0    1    1    0   
 $EndComp
-Wire Wire Line
-	2050 5000 2250 5000
-Wire Wire Line
-	2050 4500 2250 4500
-Wire Wire Line
-	2650 6250 3100 6250
-Wire Wire Line
-	2700 5950 3100 5950
 $Comp
 L Device:R R8
 U 1 1 609850CF
@@ -1857,4 +1666,69 @@ Wire Wire Line
 Connection ~ -950 6450
 Wire Wire Line
 	-150 6000 -150 6150
+Text GLabel 4850 3800 0    50   Input ~ 0
+pinMotorMow1Sense
+Text GLabel 1355 5085 0    50   Input ~ 0
+pinBumperRight
+Text GLabel 4850 4200 0    50   Input ~ 0
+ReservePinA10
+Text GLabel 7450 4800 2    50   Output ~ 0
+freePinD43
+Wire Wire Line
+	1110 4735 1350 4735
+$Comp
+L Connector:Screw_Terminal_01x03 J41
+U 1 1 60A24879
+P 1550 5475
+F 0 "J41" H 1630 5517 50  0000 L CNN
+F 1 "Buzzer" H 1630 5426 50  0000 L CNN
+F 2 "Connector_JST:JST_XH_B3B-XH-A_1x03_P2.50mm_Vertical" H 1550 5475 50  0001 C CNN
+F 3 "~" H 1550 5475 50  0001 C CNN
+	1    1550 5475
+	1    0    0    -1  
+$EndComp
+$Comp
+L power:+5V #PWR051
+U 1 1 60A3352D
+P 1350 5375
+F 0 "#PWR051" H 1350 5225 50  0001 C CNN
+F 1 "+5V" V 1365 5503 50  0000 L CNN
+F 2 "" H 1350 5375 50  0001 C CNN
+F 3 "" H 1350 5375 50  0001 C CNN
+	1    1350 5375
+	0    -1   -1   0   
+$EndComp
+$Comp
+L power:GND #PWR073
+U 1 1 60A3B4C7
+P 1350 5475
+F 0 "#PWR073" H 1350 5225 50  0001 C CNN
+F 1 "GND" V 1355 5347 50  0000 R CNN
+F 2 "" H 1350 5475 50  0001 C CNN
+F 3 "" H 1350 5475 50  0001 C CNN
+	1    1350 5475
+	0    1    1    0   
+$EndComp
+$Comp
+L Connector:Screw_Terminal_01x03 J10
+U 1 1 60A529AC
+P 1555 5085
+F 0 "J10" H 1635 5127 50  0000 L CNN
+F 1 "Bumper" H 1635 5036 50  0000 L CNN
+F 2 "Connector_JST:JST_XH_B3B-XH-A_1x03_P2.50mm_Vertical" H 1555 5085 50  0001 C CNN
+F 3 "~" H 1555 5085 50  0001 C CNN
+	1    1555 5085
+	1    0    0    -1  
+$EndComp
+$Comp
+L Connector:Screw_Terminal_01x04 J4
+U 1 1 60AA846E
+P 55 6915
+F 0 "J4" H 135 6907 50  0000 L CNN
+F 1 "I2C1_2" H 135 6816 50  0000 L CNN
+F 2 "Connector_JST:JST_XH_B4B-XH-A_1x04_P2.50mm_Vertical" H 55  6915 50  0001 C CNN
+F 3 "~" H 55  6915 50  0001 C CNN
+	1    55   6915
+	1    0    0    -1  
+$EndComp
 $EndSCHEMATC
